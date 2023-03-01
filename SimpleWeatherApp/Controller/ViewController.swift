@@ -17,12 +17,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var minTempLabel: UILabel!
     @IBOutlet weak var maxTempLabel: UILabel!
     
+    var backgroundImageView: UIImageView?
+    
     let weatherManager = WeatherManager.shared
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
         setupConfigureUI()
+        assignbackground()
+    }
+    func assignbackground(){
+        
+        let image = UIImage(named: "Sunny")
+        backgroundImageView = UIImageView(frame: view.bounds)
+        backgroundImageView?.contentMode =  UIView.ContentMode.scaleAspectFill
+        backgroundImageView?.clipsToBounds = true
+        backgroundImageView?.image = image
+        backgroundImageView?.center = view.center
+        view.addSubview(backgroundImageView!)
+        self.view.sendSubviewToBack(backgroundImageView!)
+        
     }
     func setupConfigureUI(){
         countryLabel.text = "KR"
@@ -46,6 +62,7 @@ class ViewController: UIViewController {
                     self?.currentWeatherLabel.text = "\(weatherData.weather[0].main)"
                     self?.minTempLabel.text = "\(Int(minTemp))\(WeatherAPI.celcius)"
                     self?.maxTempLabel.text = "\(Int(maxTemp))\(WeatherAPI.celcius)"
+                    self?.backgroundImageView?.image = UIImage(named: weatherData.weather[0].main)
                 }
                 print("get weather data")
             case .failure(let error):
