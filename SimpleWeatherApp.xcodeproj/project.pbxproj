@@ -70,7 +70,6 @@
 				DD6E1C4229AE23A7009FAF01 /* View */,
 				DD6E1C4129AE239F009FAF01 /* Controller */,
 				DD6E1C4029AE2393009FAF01 /* Model */,
-				DD6E1C2E29AE1E65009FAF01 /* Main.storyboard */,
 				DD6E1C3129AE1E67009FAF01 /* Assets.xcassets */,
 				DD6E1C3329AE1E67009FAF01 /* LaunchScreen.storyboard */,
 				DD6E1C3629AE1E67009FAF01 /* Info.plist */,
@@ -99,6 +98,7 @@
 		DD6E1C4229AE23A7009FAF01 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD6E1C2E29AE1E65009FAF01 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
